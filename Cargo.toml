@@ -20,6 +20,7 @@ blake2b = ["blake2b-rs"]
 cfg-if = "0.1"
 blake2b-rs = { version = "0.1", optional = true }
 sha2 = "0.9.8"
+serde = { version = "1.0", features = ["derive"] }
 
 [dev-dependencies]
 proptest = "0.9"

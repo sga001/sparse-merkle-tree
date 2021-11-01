@@ -1,7 +1,8 @@
 use core::cmp::Ordering;
+use serde::{Serialize, Deserialize};
 
 /// Represent 256 bits
-#[derive(Eq, PartialEq, Debug, Default, Hash, Clone, Copy)]
+#[derive(Eq, PartialEq, Debug, Default, Hash, Clone, Copy, Serialize, Deserialize)]
 pub struct H256([u8; 32]);
 
 const ZERO: H256 = H256([0u8; 32]);
