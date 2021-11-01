@@ -15,9 +15,11 @@ default = ["std", "blake2b"]
 std = []
 blake2b = ["blake2b-rs"]
 
+
 [dependencies]
 cfg-if = "0.1"
 blake2b-rs = { version = "0.1", optional = true }
+sha2 = "0.9.8"
 
 [dev-dependencies]
 proptest = "0.9"

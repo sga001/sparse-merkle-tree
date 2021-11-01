@@ -1,5 +1,6 @@
 use crate::{traits::Hasher, H256};
 use blake2b_rs::{Blake2b, Blake2bBuilder};
+use std::fmt;
 
 const BLAKE2B_KEY: &[u8] = &[];
 const BLAKE2B_LEN: usize = 32;
@@ -14,6 +15,15 @@ impl Default for Blake2bHasher {
             .key(BLAKE2B_KEY)
             .build();
         Blake2bHasher(blake2b)
+    }
+}
+
+// Needed for functions that want to derive debug.
+impl fmt::Debug for Blake2bHasher {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("Blake2bHasher")
+            .field("type", &"using Blake2b hasher")
+            .finish()
     }
 }
 

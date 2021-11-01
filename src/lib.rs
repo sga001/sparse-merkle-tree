@@ -63,6 +63,7 @@
 
 #[cfg(feature = "blake2b")]
 pub mod blake2b;
+pub mod sha256;
 pub mod default_store;
 pub mod error;
 pub mod h256;
