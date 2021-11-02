@@ -1,10 +1,11 @@
 use crate::h256::H256;
 use crate::traits::Hasher;
+use serde::{Serialize, Deserialize};
 
 const MERGE_NORMAL: u8 = 1;
 const MERGE_ZEROS: u8 = 2;
 
-#[derive(Debug, Eq, PartialEq, Clone)]
+#[derive(Debug, Eq, PartialEq, Clone, Serialize, Deserialize)]
 pub enum MergeValue {
     Value(H256),
     MergeWithZero {
